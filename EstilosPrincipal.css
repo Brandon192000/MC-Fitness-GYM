@@ -1,0 +1,695 @@
+/* Fondo de pantalla con efecto de vidrio en el body */
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #eeeeee;
+    overflow-x: hidden; /* Para evitar desbordamiento horizontal */
+}
+
+/* Transición global para tamaños, márgenes y paddings */
+*,
+*::before,
+*::after {
+    transition: all 0.3s ease-in-out; /* Aplica una transición general a todos los elementos */
+}
+
+/* Desactivar la transición en el carrusel */
+.carousel,
+.carousel * {
+    transition: none;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/Img/FondosImagenes/gettyimages-1316572851-640x640-transformed%20(1).jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(8px); /* Efecto de vidrio */
+    z-index: -1; /* Fondo detrás de todo el contenido */
+}
+
+
+/* Header */
+header {
+    background-color: #252525;
+}
+
+.logo-img{
+    height: 56px;
+}
+
+
+.sidenav .sidenav-header {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.sidenav-logo {
+    width: 100px; /* Tamaño de la imagen */
+    height: auto;
+    border-radius: 50%; /* Hace la imagen circular */
+}
+
+
+.sidenav a {
+    color: #eeeeee;
+}
+
+.sidenav a:hover {
+    background-color: #cf0a0a;
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #eeeeee;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5rem; 
+    margin: 25px 0;
+}
+
+
+
+
+/*---------------------------------------------------------------------------------------*/
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Cambia el color de los puntos indicadores */
+.carousel .indicators .indicator-item {
+    background-color: black; /* Color de los puntos cuando están inactivos */
+}
+
+/* Cambia el color del punto activo */
+.carousel .indicators .indicator-item.active {
+    background-color: #cf0a0a; /* Color del punto activo */
+}
+
+.indicator-item{
+    position: relative;
+}
+
+
+
+.carousel {
+    position: relative;
+    z-index: 1;
+    max-width: 55rem;
+    margin: auto;
+}
+
+.carousel-item img{
+    height: 50vh;
+    background: no-repeat center scroll;
+    -webkit-backgroud-size: cover;
+    -moz-box-size: cover;
+    -moz-background-size:cover;
+    background-size: cover;
+    background-position: center center;
+}
+
+/*---------------------------------------------------------------------------------------*/
+/*membership section*/
+
+.membership-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    background-color: #252525;
+    color: #eeeeee;
+    position: relative; /* Para que la imagen se posicione dentro del contenedor */
+}
+
+
+.membership-box {
+    background-color: #ee2727;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    color: #eeeeee;
+    border: 0.3rem solid #eeeeee;
+    position: relative;
+    z-index: 1;
+}
+
+.membership-box h2 {
+    position: relative;
+    top: -10px;
+    font-size: 2.5rem;
+    color: #252525;
+}
+
+.membership-box .price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------*/
+/*estilo general del botom*/
+
+
+.custom-btn {
+    transition: all 0.3s ease-in-out;
+    font-family: "Dosis", sans-serif;
+    width: 13rem;
+    height: 60px;
+    background-image: linear-gradient(100deg, #000000 0%, #ff0000 50%); /* Gradiente de negro a rojo */
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 10px;
+    color: #eeeeee;
+}
+
+.custom-btn:hover {
+    transform: translateY(3px); /* Efecto de desplazamiento */
+    box-shadow: none; /* Elimina la sombra en hover */
+}
+
+.custom-btn:active {
+    opacity: 0.7; /* Reduce la opacidad al hacer clic */
+    transform: scale(0.95); /* Efecto de reducción de tamaño en clic */
+}
+
+.custom-2{
+    width: 20rem;
+}
+
+
+
+/*---------------------------------------------------------------------------------------------------*/
+
+
+/* Información adicional */
+.info-box {
+    background-color: #252525;
+    padding: 2rem;
+    color: #eeeeee;
+    text-align: left;
+    flex: 1;
+}
+
+.info-box p {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    font-size: 1.2rem;
+}
+
+/* Iconos */
+.info-box i {
+    margin-right: 2rem;
+    font-size: 2rem; /* Tamaño más pequeño de los íconos */
+}
+
+.info-box .separator {
+    margin: 3rem 0;
+    border-top: 2px solid #eeeeee;
+}
+
+/*---------------------------------------------------------------------------------------*/
+/*FOOTER PART, aqui estaran los estilos personalizados para el apartados del foot*/
+.footer-container p {
+    font-size: 1.5rem; /* Reduce el tamaño del texto del footer */
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+
+.FootPlanes{
+
+    display: flex;
+    flex-direction: row-reverse;
+    
+}
+
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    }
+}
+
+/* Ajustes responsivos para la imagen del footer en móviles */
+.containerImg .logo-Foot {
+    height: 100px; /* Tamaño adecuado para móviles */
+    width: 100px;
+    display: block;
+    margin: 0 auto; /* Centrado horizontal en el contenedor */
+}
+
+.logo-Foot {
+    animation: pulse 2s infinite; /* Animación continua */
+}
+
+
+/* Logo */
+.logo-container {
+    position: absolute;
+    bottom: 10px;
+    width: 8rem; /* Tamaño más pequeño del logo */
+    opacity: 0.3;
+    z-index: 2;
+    animation: float 6s ease-in-out infinite;
+}
+
+.info-box1{
+    
+    background-color: #D3D3D3;
+    padding: 2.5rem;
+    text-align: left;
+    flex: 1;
+}
+
+.footer {
+    width: 100%; /* Ocupa el 100% del ancho */
+    padding: 1rem 0;
+    text-align: center;
+    background-color: #D3D3D3; /* Color de fondo */
+    color: #000; /* Color de texto */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+.separator {
+    width: 100%;/* Empieza con un ancho de 0 */
+    margin: 1rem auto; /* Centra la línea horizontalmente */
+    border-top: 1px solid black;
+}
+
+.separator2{
+    width: 100%;
+    margin: 1rem auto; /* Centra la línea horizontalmente */
+    border-top: 2px solid #D3D3D3;
+}
+
+
+
+.PaginasWebsFoot{
+    display: flex;
+    justify-content: center;
+}
+
+
+@keyframes slideInfoFromCenter {
+    from {
+        transform: translateY(50px); /* Empieza desde abajo del centro */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* Llega al centro */
+        opacity: 1;
+    }
+}
+
+
+.containerImg{
+    display: flex;
+    justify-content: center;
+}
+.containerImg .logo-Foot{
+    height: 200px;
+    width: 200px;
+    
+}
+
+.container-Redes-Foot{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.ImgIcons{
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+
+.ImgIcons:hover{
+    animation: bounce 0.5s ease forwards infinite;
+
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+
+.info-Foot a {
+    transition: text-shadow 0.3s ease;
+}
+
+.info-Foot a:hover {
+    text-shadow: 3px 3px 10px rgba(230, 19, 19, 0.801);
+}
+
+.PaginasWebsFoot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.info-Foot {
+    flex: 1;
+}
+
+.location {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.location .material-icons {
+    vertical-align: middle;
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+/*---------------------------------------------------------------------------------------*/
+
+
+/* Media query para pantallas de tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* Header */
+    header {
+        background-color: #252525;
+    }
+
+    /* Logo en el header */
+    .logo-img {
+        height: 64px; /* Tamaño del logo adecuado para tablets */
+    }
+
+    /* Navbar */
+    #nav-mobile a {
+        font-size: 1rem; /* Ajusta el tamaño de la fuente */
+        color: #eeeeee;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 70vh; /* Reduce la altura para tablets */
+    }
+
+    .hero h1 {
+        font-size: 3.5rem; /* Tamaño de título ajustado para tablets */
+    }
+
+    .hero p {
+        font-size: 1.5rem; /* Tamaño de texto reducido */
+    }
+
+    /* Botón personalizado */
+    .custom-btn {
+        width: 18rem;
+        height: 50px;
+        font-size: 10px; /* Ajuste para tablets */
+    }
+
+    /* Carousel */
+    .carousel {
+        max-width: 30rem; /* Anchura máxima del carrusel para tablets */
+    }
+
+    .carousel-item img {
+        height: 55vh; /* Reduce la altura de las imágenes del carrusel */
+    }
+
+    /* Membership Section */
+    .membership-container {
+        flex-direction: column; /* Cambia la dirección a columna en tablets */
+        padding: 3rem 2rem;
+    }
+
+    .membership-box {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .membership-box h2 {
+        font-size: 4rem;
+    }
+
+    .membership-box .price {
+        font-size: 3rem;
+    }
+
+    /* Información adicional */
+    .info-box {
+        padding: 3rem;
+    }
+
+    /* Footer */
+    .footer-container p {
+        font-size: 1.2rem;
+    }
+
+    .social-icons img {
+        width: 3.5rem;
+        height: 3.5rem; /* Ajusta el tamaño de los íconos sociales */
+    }
+
+    .separator {
+        width: 100%; /* Ancho ajustado de los separadores en tablets */
+        margin: 1rem auto;
+    }
+
+    .container-Redes-Foot {
+        gap: 1rem; /* Espacio entre íconos sociales */
+    }
+}
+
+
+
+/* Media query para pantallas Dde pc*/
+@media (min-width: 1024px) {
+    
+    /* Estilos generales */
+    body {
+        margin: 0;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    /* Header */
+    header {
+        background-color: #252525;
+    }
+   
+    #nav-mobile a {
+        font-size: 1.2rem; /* Ajusta el tamaño inicial de la fuente */
+        color: #eeeeee; /* Puedes ajustar el color de los enlaces si lo necesitas */
+    }
+    
+    .custom-nav a:hover {
+       background-color:  #cf0a0a;
+       transition: 2s;
+    }
+    
+
+    .left-logo {
+        position: relative;
+        top: 8rem; 
+        left: 8rem;  
+    }
+
+    .logo-img{
+        height: 64px;
+    }
+   
+
+
+
+    .custom-btn {
+        transition: all 0.3s ease-in-out;
+        font-family: "Dosis", sans-serif;
+        width: 23rem;
+        height: 60px;
+        background-image: linear-gradient(100deg, #000000 0%, #ff0000 50%); /* Gradiente de negro a rojo */
+        outline: none;
+        cursor: pointer;
+        border: none;
+        font-size: 24px;
+        color: #eeeeee;
+    }
+    
+    .custom-btn:hover {
+        transform: translateY(3px); /* Efecto de desplazamiento */
+        box-shadow: none; /* Elimina la sombra en hover */
+    }
+    
+    .custom-btn:active {
+        opacity: 0.7; /* Reduce la opacidad al hacer clic */
+        transform: scale(0.95); /* Efecto de reducción de tamaño en clic */
+    }
+    
+    .custom-2{
+        width: 23rem;
+        border-radius: 2px solid white;
+    }
+    
+    /* Hero Section */
+    .hero h1 {
+        font-size: 4.5em;
+        margin: 0;
+    }
+
+    .hero p {
+        font-size: 2em;
+        margin: 20px 0;
+    }
+
+    .hero button {
+        font-size: 14px;
+        padding: 1rem;
+    }
+
+    /* Carrusel */
+    .carousel {
+        max-width: 55rem;
+        margin: auto;
+        
+    }
+
+
+    .hero-content>h1{
+        animation: slideInfoFromCenter 2s ease-out forwards;
+    }
+
+    .carousel-item img{
+        height: 100vh;
+        background: no-repeat center scroll;
+        -webkit-backgroud-size: cover;
+        -moz-box-size: cover;
+        -moz-background-size:cover;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /* Membresía Section */
+    .membership-container {
+        flex-direction: row;
+        padding: 5rem;
+    }
+
+    .membership-box {
+        padding: 5rem;
+        margin-right: 2rem;
+        transform: translateY(-7.5rem);
+    }
+
+    .membership-box h2 {
+        font-size: 4rem;
+    }
+
+    .membership-box .price {
+        font-size: 3rem;
+    }
+
+    .membership-box button {
+        font-size: 1rem;
+        padding: 1rem 3rem;
+    }
+
+    .info-box {
+        padding: 5rem;
+    }
+
+    /* Footer */
+    .footer-container p {
+        font-size: 2rem;
+    }
+
+    .social-icons {
+        gap: 5rem;
+    }
+
+    .social-icons img {
+        width: 5rem;
+        height: 5rem;
+    }
+    .separator {
+        width: 80%;/* Empieza con un ancho de 0 */
+        margin: 1rem auto; /* Centra la línea horizontalmente */
+        border-top: 1px solid black;
+    }
+
+    .carousel-control:active{
+        color: #7D8082;
+    }
+    
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+
